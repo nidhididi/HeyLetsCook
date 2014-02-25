@@ -1,9 +1,11 @@
 HeyLetsCook::Application.routes.draw do
+
+  devise_for :users
+  resources :groups, :recipes, :users
   get "welcome/index"
   get "welcome/about"
   get "welcome/contact"
-  devise_for :users
-  resources :groups, :recipes, :users
+ 
 
   #get '/contact_us' to: 'contact_us#show'
   #get '/about_me' to: 'about_me#show'
